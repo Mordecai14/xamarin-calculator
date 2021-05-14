@@ -1,24 +1,149 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Calculator.MainPage">
+             x:Class="Calculator.MainPage"
+             BackgroundColor="Black">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+    <ContentPage.Resources>
 
+        <Style x:Key="plainButton"
+         TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="#2b2c31" />
+            <Setter Property="TextColor"
+                    Value="Black" />
+            <Setter Property="CornerRadius"
+                    Value="0" />
+            <Setter Property="FontSize"
+                    Value="35" />
+            <Setter Property="TextColor"
+                    Value="White" />
+            <Setter Property="Margin"
+                    Value="2,2,2,2"/>
+            <Setter Property="CornerRadius"
+                    Value="50"/>
+            <Setter Property="BorderWidth"
+                    Value="1"/>
+            <Setter Property="BorderColor"
+                    Value="#2abb9b"/>
+
+        </Style>
+        <Style x:Key="greenButton"
+               TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="#2abb9b" />
+            <Setter Property="TextColor"
+                    Value="White" />
+            <Setter Property="CornerRadius"
+                    Value="0" />
+            <Setter Property="FontSize"
+                    Value="35" />
+            <Setter Property="Margin"
+                    Value="2,2,2,2"/>
+            <Setter Property="CornerRadius"
+                    Value="50"/>
+            <Setter Property="BorderWidth"
+                    Value="1"/>
+            <Setter Property="BorderColor"
+                    Value="White"/>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <Grid RowSpacing="1"
+          ColumnSpacing="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label Text="73"
+               HorizontalTextAlignment="End"
+               VerticalTextAlignment="End"
+               TextColor="White"
+               FontSize="100"
+               Grid.ColumnSpan="4" />
+        <Button Text="C"
+                Grid.Row="1"
+                Style="{StaticResource plainButton}" />
+        <Button Text="+/-"
+                Grid.Row="1"
+                Grid.Column="1"
+                Style="{StaticResource plainButton}" />
+        <Button Text="%"
+                Grid.Row="1"
+                Grid.Column="2"
+                Style="{StaticResource plainButton}" />
+        <Button Text="/"
+                Grid.Row="1"
+                Grid.Column="3"
+                Style="{StaticResource greenButton}" />
+        <Button Text="7"
+                Grid.Row="2"
+                Style="{StaticResource plainButton}" />
+        <Button Text="8"
+                Grid.Row="2"
+                Grid.Column="1"
+                Style="{StaticResource plainButton}" />
+        <Button Text="9"
+                Grid.Row="2"
+                Grid.Column="2"
+                Style="{StaticResource plainButton}" />
+        <Button Text="X"
+                Grid.Row="2"
+                Grid.Column="3"
+                Style="{StaticResource greenButton}" />
+        <Button Text="4"
+                Grid.Row="3"
+                Style="{StaticResource plainButton}" />
+        <Button Text="5"
+                Grid.Row="3"
+                Grid.Column="1"
+                Style="{StaticResource plainButton}" />
+        <Button Text="6"
+                Grid.Row="3"
+                Grid.Column="2"
+                Style="{StaticResource plainButton}" />
+        <Button Text="-"
+                Grid.Row="3"
+                Grid.Column="3"
+                Style="{StaticResource greenButton}" />
+        <Button Text="1"
+                Grid.Row="4"
+                Style="{StaticResource plainButton}" />
+        <Button Text="2"
+                Grid.Row="4"
+                Grid.Column="1"
+                Style="{StaticResource plainButton}" />
+        <Button Text="3"
+                Grid.Row="4"
+                Grid.Column="2"
+                Style="{StaticResource plainButton}" />
+        <Button Text="+"
+                Grid.Row="4"
+                Grid.Column="3"
+                Style="{StaticResource greenButton}" />
+        <Button Text="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="5"
+                Style="{StaticResource plainButton}" />
+        <Button Text="."
+                Grid.Row="5"
+                Grid.Column="2"
+                Style="{StaticResource plainButton}" />
+        <Button Text="="
+                Grid.Row="5"
+                Grid.Column="3"
+                Style="{StaticResource greenButton}" 
+                x:Name="roundable"/>
+    </Grid>
 </ContentPage>
